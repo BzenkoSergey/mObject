@@ -1,0 +1,39 @@
+{
+  "name": "mobject",
+  "version": "0.0.1",
+  "description": "Model Layer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BzenkoSergey/mObject.git"
+  },
+  "keywords": [
+    "model"
+  ],
+  "author": "Bzenko Sergey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BzenkoSergey/mObject/issues"
+  },
+  "homepage": "https://github.com/BzenkoSergey/mObject#readme",
+  "dependencies": {
+    "chokidar": "^1.2.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "event-stream": "^3.3.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^2.2.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-watch": "^4.3.5",
+    "gulp-wrap": "^0.11.0",
+    "karma": "^0.13.15",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.2.1",
+    "karma-mocha": "^0.2.1",
+    "mocha": "^2.3.4"
+  }
+}
