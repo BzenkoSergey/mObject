@@ -103,7 +103,7 @@ a {
     min-height: 370px;
     position: relative;
 
-    background-image: url(i/space2.jpg);
+    background-image: url(../i/space2.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-color: #050B17;
@@ -136,7 +136,7 @@ a {
 }
 
 .preview-planet1 {
-    background-image: url(i/planet.png);
+    background-image: url(../i/planet.png);
     background-repeat: no-repeat;
     background-size: 100%;
 
@@ -150,7 +150,7 @@ a {
 }
 
 .preview-planet2 {
-    background-image: url(i/planet2.png);
+    background-image: url(../i/planet2.png);
     background-repeat: no-repeat;
     background-size: 100%;
 
@@ -183,7 +183,7 @@ a {
 }
 
 .preview-planet3 {
-    background-image: url(i/planet3.png);
+    background-image: url(../i/planet3.png);
     background-repeat: no-repeat;
     background-size: 100%;
 
@@ -202,7 +202,7 @@ a {
 }
 
 .preview-planet4 {
-    background-image: url(i/planet4.png);
+    background-image: url(../i/planet4.png);
     background-repeat: no-repeat;
     background-size: 100%;
 
@@ -221,7 +221,7 @@ a {
 }
 
 .preview-planet5 {
-    background-image: url(i/planet5.png);
+    background-image: url(../i/planet5.png);
     background-repeat: no-repeat;
     background-size: contain;
 
@@ -233,7 +233,7 @@ a {
 }
 
 .preview-planet6 {
-    background-image: url(i/planet6.png);
+    background-image: url(../i/planet6.png);
     background-repeat: no-repeat;
     background-size: contain;
 
@@ -282,15 +282,15 @@ a {
 }
 
 .feacher-img.inheritance {
-    background-image: url(i/inheritance.png);
+    background-image: url(../i/inheritance.png);
 }
 
 .feacher-img.components {
-    background-image: url(i/components.png);
+    background-image: url(../i/components.png);
 }
 
 .feacher-img.states {
-    background-image: url(i/states.png);
+    background-image: url(../i/states.png);
 }
 
 .feacher-more-wrap {
