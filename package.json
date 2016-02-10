@@ -1,0 +1,29 @@
+{
+  "name": "moweb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "karma-chai": "^0.1.0",
+    "node-uglifier": "^0.4.5"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^2.3.1"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BzenkoSergey/mObject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BzenkoSergey/mObject/issues"
+  },
+  "homepage": "https://github.com/BzenkoSergey/mObject#readme"
+}

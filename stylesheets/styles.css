@@ -7,6 +7,59 @@ body {
     background-color: #F1EFEF;
 }
 
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/*
+    Helpers
+*/
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.layout-center {
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.layout-center.mini {
+    max-width: 1000px;
+}
+
+.clearfix {
+    overflow: hidden;
+}
+
+.valign-middle {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.relative {
+    position: relative;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+/*
+    Buttons
+*/
 .btn {
     display: inline-block;
     border: none;
@@ -19,6 +72,7 @@ body {
     text-transform: uppercase;
     font-family: 'Roboto', sans-serif;
     cursor: pointer;
+    transition: background-color .4s, color .4s, border-color .4s linear;
 }
 
 .btn:focus,
@@ -30,38 +84,14 @@ body {
     margin-left: 5px;
 }
 
-a {
-    text-decoration: none;
-}
-
-.pull-left {
-    float: left;
-}
-
-.pull-right {
-    float: right;
-}
-
-.layout-center {
-    max-width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.clearfix {
-    overflow: hidden;
-}
-
-.valign-middle {
-    display: inline-block;
-    vertical-align: middle;
-}
-
 .logo-link {
     padding: 8px 0;
     margin-right: 60px;
 }
 
+/*
+    Main Navigation
+*/
 .nav {
     background-color: #08011B;
     box-shadow: 0px 0px 116px rgba(197, 131, 49, 0.45);
@@ -71,6 +101,7 @@ a {
 
 .nav a {
     color: white;
+    transition: background-color .4s, color .4s, border-color .4s linear;
 }
 
 .nav-list {
@@ -95,32 +126,46 @@ a {
     background-color: rgba(255, 255, 255, .1);
 }
 
-.relative {
-    position: relative;
-}
-
-.preview {
-    min-height: 370px;
-    position: relative;
-
+.preview-wrap {
     background-image: url(../i/space2.jpg);
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center top;
     background-color: #050B17;
 }
 
-.preview-git {
+.preview {
+    min-height: 265px;
+    padding: 15px;
+    position: relative;
+    color: #fff;
+}
+
+.preview-desc {
+    max-width: 32%;
+    text-shadow: 1px 1px 1px #000;
+}
+
+.preview-desc p {
+    font-size: 18px;
+}
+
+.preview-link {
     color: #fff;
     font-size: 16px;
-    margin-top: 20px;
+    margin: 5px;
     display: inline-block;
     border: 1px solid rgba(255, 255, 255, 0.31);
     border-radius: 4px;
     padding: 7px 13px;
+    transition: background-color .4s, color .4s, border-color .4s linear;
 }
 
-.preview-git:hover,
-.preview-git:focus {
+.preview-link:first-child {
+    margin-left: 0;
+}
+
+.preview-link:hover,
+.preview-link:focus {
     border-color: #fff;
 }
 
@@ -135,40 +180,74 @@ a {
     left: 40%;
 }
 
+.preview-planet {
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+}
+
 .preview-planet1 {
     background-image: url(../i/planet.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-
     width: 300px;
-    height: 200px;
-    
-    position: absolute;
-    top: 126px;
-    right: 33%;
+    height: 120px;
+    top: 50%;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: -60px;
     display: block;
 }
 
-.preview-planet2 {
+.preview-planet-child {
     background-image: url(../i/planet2.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-
     width: 100px;
     height: 76px;
-    
-    position: absolute;
-    top: 23px;
+    top: 8%;
     right: 24%;
+}
+
+.preview-planet-child .planet-link {
+    top: 74%;
+    left: 82%;
+    font-size: 16px;
+}
+
+.preview-planet-component {
+    background-image: url(../i/planet3.png);
+    width: 30px;
+    height: 30px;
+    top: 6%;
+    right: 18%;
+}
+
+.preview-planet-component .planet-link {
+    top: 36%;
+    left: 137%;
+    font-size: 12px;
+}
+
+.preview-planet-state {
+    background-image: url(../i/planet4.png);
+    width: 80px;
+    height: 80px;
+    top: 58%;
+    right: 2%;
+}
+
+.preview-planet-state .planet-link {
+    top: 55%;
+    right: 112%;
+    font-size: 21px;
 }
 
 .planet-link {
     position: absolute;
     color: rgba(255, 255, 255, 0.37);
     
-    border: 1px solid;
+    /*border: 1px solid;*/
     border-radius: 4px;
     padding: 3px 7px;
+    white-space: nowrap;
+    transition: background-color .4s, color .4s, border-color .4s linear;
 }
 
 .planet-link:focus,
@@ -176,74 +255,24 @@ a {
     color: #fff;
 }
 
-.child {
-    top: 74%;
-    left: 82%;
-    font-size: 16px;
-}
-
-.preview-planet3 {
-    background-image: url(../i/planet3.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-
-    width: 30px;
-    height: 30px;
-    
+.orbite {
     position: absolute;
-    top: 16px;
-    right: 18%;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.11)
 }
 
-.component {
-    top: 36%;
-    left: 137%;
-    font-size: 12px;
+.orbite-primary {
+    width: 500px;
+    height: 500px;
+    left: 50%;
+    top: -42%;
+    margin-left: -250px;
 }
 
-.preview-planet4 {
-    background-image: url(../i/planet4.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
 
-    width: 80px;
-    height: 80px;
-    
-    position: absolute;
-    top: 221px;
-    right: 9%;
-}
-
-.state {
-    top: 55%;
-    right: 112%;
-    font-size: 21px;
-}
-
-.preview-planet5 {
-    background-image: url(../i/planet5.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-
-    width: 70px;
-    height: 70px;
-    position: absolute;
-    top: 213px;
-    left: 16%;
-}
-
-.preview-planet6 {
-    background-image: url(../i/planet6.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-
-    width: 100px;
-    height: 70px;
-    position: absolute;
-    top: 211px;
-    left: 7%;
-}
-
+/*
+    Feachers
+*/
 .feachers {
     text-align: center;
     padding: 58px 0;
@@ -291,8 +320,4 @@ a {
 
 .feacher-img.states {
     background-image: url(../i/states.png);
-}
-
-.feacher-more-wrap {
-    text-align: center;
 }
