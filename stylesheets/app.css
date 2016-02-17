@@ -1,3 +1,7 @@
+html,
+body {
+  height: 100%; }
+
 body {
   margin: 0;
   padding: 0;
@@ -43,6 +47,9 @@ a {
 
 .text-center {
   text-align: center; }
+
+.padding-none {
+  padding: 0; }
 
 /*
     Buttons
@@ -283,3 +290,23 @@ a {
 .api-content {
   padding: 20px;
   border-radius: 4px; }
+
+.api-wrap {
+  background-color: #fff;
+  height: calc(100% - 47px); }
+
+.api-nav {
+  width: 200px;
+  padding: 15px;
+  overflow-x: hidden;
+  overflow-y: auto; }
+  .api-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+
+.api-content {
+  padding: 20px;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto; }

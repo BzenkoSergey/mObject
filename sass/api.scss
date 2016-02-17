@@ -1,0 +1,24 @@
+.api-wrap {
+    background-color: #fff;
+    height: calc(100% - 47px);
+}
+
+.api-nav {
+    width: 200px;
+    padding: 15px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.api-content {
+    padding: 20px;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}

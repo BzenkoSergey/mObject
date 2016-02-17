@@ -27,11 +27,217 @@
 </div>
 </div>
 
-        <div class="content layout-center">
-            <h1>Install</h1>
-            <div>
-                Bower install
-                <input value="bower i mObject --save">
+        <div class="content layout-center mini clarfix api-wrap padding-none">
+            <div class="api-nav pull-left">
+                <ul>
+                    <li>
+                        <h3>
+                            <a href="#model">Model</a>
+                        </h3>
+                    </li>
+                    <li>
+                        <a href="#model-basic_concepts">Basic Concepts</a>
+                    </li>
+                    <li>
+                        <a href="#model-init">init()</a>
+                    </li>
+                    <li>
+                        <a href="#model-inits_stack">inits stack</a>
+                    </li>
+                    <li>
+                        <a href="#model-iife_mode">IIFE Mode</a>
+                    </li>
+                    <li>
+                        <a href="#model-child_descriptor">Child Descriptor</a>
+                    </li>
+                    
+                    <li>
+                        <h3>
+                            <a href="#model-api">Api</a>
+                        </h3>
+                    </li>
+                    <li>
+                        <a href="#model-api_abstract">abstract</a>
+                    </li>
+                    <li>
+                        <a href="#model-api_inheritable">inheritable</a>
+                    </li>
+                    <li>
+                        <a href="#model-api_isModel">isModel</a>
+                    </li>
+                    <li>
+                        <a href="#model-api_uniqueKey">uniqueKey</a>
+                    </li>
+                    <li>
+                        <a href="#model-api_extend">extend()</a>
+                    </li>
+                    <li>
+                        <a href="#model-api_extendInit">extendInit()</a>
+                    </li>
+                    <li>
+                        <a href="#model-api_extendClass">extendClass()</a>
+                    </li>
+                    <li>
+                        <a href="#model-api_extendProto">extendProto()</a>
+                    </li>
+                    <li>
+                        <a href="#model-api_reInit">reInit()</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="api-content clearfix">
+                <div id="model">
+                    <h2>Model</h2>
+                    <p>
+                        Model - is the object that contains some data and behavior with possibility to pass them to child.
+                    </p>
+                </div>
+                
+                <div id="model-basic_concepts">
+                    <h2>Basic Concepts</h2>
+                    <ul>
+                        <li>Model has included complex system of inheritance and configuration of creating new instances or childs.</li>
+                        <li>model is a instance of the Model and gets all data/behavior from the Model, with some features that are cloned from Model to this instance for personal using and changing in future.</li>
+                    </ul>
+                </div>
+                
+                <div id="model-init">
+                    <h2>init()</h2>
+                    <p>
+                        Init is one unit of initialization instance, that has full control on the process and can stop the process that leads to destruction of the instance.
+                    </p>
+                    <p>
+                        Is usually used for adding some functionality or break instance cases.
+                    </p>
+                    <code>
+                        Is not available to manual calls and executes on instance creation or re-init.
+                    </code>
+                    <ul>
+                        <li>
+                            <b>arguments:</b> data from instance creating
+                        </li>
+                        <li>
+                            <b>scope execution:</b> current model instance
+                        </li>
+                        <li>
+                            <b>return:</b> in case of false the instance creation/re-init will be broken. (only false value is processed)
+                        </li>
+                    </ul>
+                </div>
+                
+                <div id="model-inits_stack">
+                    <h2>inits stack</h2>
+                    <p>
+                        Inits stack - is the list of init and is as part of configuration instance creation. The list executes during instance creation or re-init, in case of anyone init returns false, the inits iteration will be stopped and instance will not be created.
+                    </p>
+                    <p>
+                        Each Model/model contains its own inits stack that can be modified without negative affecting on other Models/models.
+                    </p>
+                    <p>
+                        The list is mutable and inheritable and can be modified via API extendInit()
+                    </p>
+                </div>
+                
+                <div id="model-iife_mode">
+                    <h2>IIFE Mode</h2>
+                    <p>
+                        This mode means that passed callback will be executed and its result will be placed in the Model/model by key name. In case when IIFE callback returns undefined the result and key name will be ignored.
+                    </p>
+                    <p>
+                        This is inheritable part and the execution process will be repeated on new Model child creation.
+                    </p>
+                </div>
+                
+                <div id="model-child_descriptor">
+                    <h2>Child Descriptor</h2>
+                    <p>
+                        Descriptor contains some features (methods, props) that will be applied to child. The descriptor has ability to add some configuration params such as init, abstract, inheritable.
+                    </p>
+                </div>
+                
+                <div id="model-api">
+                    <div id="model-api_abstract">
+                        <h2>abstract</h2>
+                        <p>
+                            It prevents the creation instances from the Model. When you try to create instance, an exception will be thrown!
+                            <br>
+                            <b>default: false</b>
+                        </p>
+                    </div>
+                    
+                    <div id="model-api_inheritable">
+                        <h2>inheritable</h2>
+                        <p>
+                            Allows creation child from Model.
+                            <br>
+                            <b>default: true</b>
+                        </p>
+                    </div>
+                    
+                    <div id="model-api_isModel">
+                        <h2>isModel</h2>
+                        <p>
+                            The property means that this object is Model constructor.
+                            <br>
+                            <b>default for Model constructor: true</b>
+                        </p>
+                    </div>
+                    
+                    <div id="model-api_uniqueKey">
+                        <h2>uniqueKey</h2>
+                        <p>
+                            Unique key used for models tracking.
+                            <br>
+                            <code>
+                                Models collection avoids the creation of a new model with the same value of unique key. 
+                            </code>
+                            <br>
+                            <b>default: id</b>
+                        </p>
+                    </div>
+                    
+                    <div id="model-api_extend">
+                        <h2>extend()</h2>
+                        <p>
+                            Creates a new child with the features according to descriptor.
+                            <br>
+                            <b>return: created child</b>
+                        </p>
+                    </div>
+                    
+                    <div id="model-api_extendInit">
+                        <h2>extendInit()</h2>
+                        <p>
+                            Adds one init callback to inits stack.
+                            <br>
+                            <b>default for Model constructor: true</b>
+                        </p>
+                    </div>
+                    
+                    <div id="model-api_extendClass">
+                        <h2>extendClass()</h2>
+                        <p>
+                            Extend existing Model constructor.
+                            <br>
+                            All created childs of the Model will have these added specifics.
+                        </p>
+                    </div>
+                    
+                    <div id="model-api_extendProto">
+                        <h2>extendProto()</h2>
+                        <p>
+                            Extend existing Model prototype that is injected to all model instances.
+                        </p>
+                    </div>
+                    
+                    <div id="model-api_reInit">
+                        <h2>reInit()</h2>
+                        <p>
+                            Re-run all inits stack. 
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </body>
