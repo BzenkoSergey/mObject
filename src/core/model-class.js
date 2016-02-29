@@ -1,16 +1,8 @@
 injector.set('model-class', ModelClass);
 
 function ModelClass(injector) {
-	var ClassCreator = injector.get('class-creator'),
-		ProtoCreator = injector.get('proto-creator');
-
-	var BaseClass = ClassCreator(),
-        classExtender = Utils.makeExtender({
-            ModelClass: BaseClass
-        });
-
-	BaseClass.$ = ProtoCreator({}, classExtender);
-	BaseClass.prototype = ProtoCreator();
+	var ClassFactory = injector.get('class-factory');
+    var BaseClass = ClassFactory();
 
 	return BaseClass;
 }

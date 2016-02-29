@@ -12,7 +12,11 @@ var injector = (function() {
 	return injector = new Injector();
 
     // initialize injector
-	function run() {
+	function run(name) {
+        if(name) {
+            return get.apply(this, arguments);
+        }
+        
 		for(var name in storage) {
 			get.apply(this, [name]);
 		}

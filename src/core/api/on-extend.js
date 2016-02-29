@@ -5,7 +5,7 @@ function OnExtend(injector) {
 	ModelClass.$.onExtend = onExtend;
 
 	function onExtend(cb) {
-        this.ModelClass.$$.onExtend.push(cb);
-		return this.ModelClass;
+        var ModelClass = this.ModelClass;
+        return Utils.addToStack(ModelClass, cb);
 	}
 }
