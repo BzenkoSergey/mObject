@@ -2,17 +2,19 @@ injector.set('init', Init);
 
 function Init(injector) {
 	var ModelClass = injector.get('model-class');
-	ModelClass.prototype.init = init;
+	ModelClass.prototype.$.init = init;
 
 	function init() {
-        var modelData = this.constructor._data(),
+        var instance = this.instance;
+        
+        var modelData = instance.constructor._data(),
             modelInstStack = modelData.instStack;
 
         if(!modelInstStack) {
             modelInstStack = modelData.instStack = [];
         }
 
-        var instData = this._data(),
+        var instData = instance._data(),
             instStack = instData.instStack;
 
         instData.initArgs = arguments;
@@ -21,7 +23,7 @@ function Init(injector) {
             instStack = instData.instStack = modelInstStack.slice();
         }
 
-        Utils.performStackCbs(this, instStack, arguments);
-        return this;
+        Utils.performStackCbs(instance, instStack, arguments);
+        return instance;
 	}
 }

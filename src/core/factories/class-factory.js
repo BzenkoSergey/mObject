@@ -8,7 +8,8 @@ function ClassFactory(injector) {
             this._data = dataGetter.bind(null, instData);
             
             // cb on create instance
-            return this.init.apply(this, arguments);
+            this.$.instance = this;
+            return this.$.init.apply(this.$, arguments);
         }
 
         // model private data

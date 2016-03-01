@@ -37,5 +37,6 @@ function Extend(injector) {
         ChildClass.$.ParentClass = ParentClass || {};
         ChildClass.prototype = ParentClass ? Object.create(ParentClass.prototype) : {};
         ChildClass.prototype.constructor = ChildClass;
+        ChildClass.prototype.$ = ParentClass ? Object.create(ParentClass.prototype.$) : {};
     }
 }
