@@ -64,14 +64,14 @@ var Utils = (function() {
     }
 
     function cloneStack(ParentClass, ChildClass) {
-        var parentData = ParentClass._data(),
+        var parentData = ParentClass ? ParentClass._data() : {},
             childData = ChildClass._data();
         
         childData.stack = (parentData.stack || []).slice();
     }
 
     function cloneInstStack(ParentClass, ChildClass) {
-        var parentData = ParentClass._data(),
+        var parentData = ParentClass ? ParentClass._data() : {},
             childData = ChildClass._data();
         
         childData.instStack = (parentData.instStack || []).slice();

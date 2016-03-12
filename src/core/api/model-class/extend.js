@@ -13,10 +13,6 @@ function Extend(injector) {
 
         prepareInheritance(ChildClass, ParentClass);
 
-        // stacks support
-        Utils.cloneStack(ParentClass, ChildClass);
-        Utils.cloneInstStack(ParentClass, ChildClass);
-
         // inject new features
         Utils.extendObj(ChildClass.prototype, sources);
 
@@ -38,5 +34,9 @@ function Extend(injector) {
         ChildClass.prototype = ParentClass ? Object.create(ParentClass.prototype) : {};
         ChildClass.prototype.constructor = ChildClass;
         ChildClass.prototype.$ = ParentClass ? Object.create(ParentClass.prototype.$) : {};
+
+        // stacks support
+        Utils.cloneStack(ParentClass, ChildClass);
+        Utils.cloneInstStack(ParentClass, ChildClass);
     }
 }
