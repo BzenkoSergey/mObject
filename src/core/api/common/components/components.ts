@@ -1,11 +1,12 @@
-injector.set('components', Components);
+import ModelClass from './../../../model-class.ts';
+import Builder from './builder.ts';
 
-function Components(injector) {
-	var ModelClass = injector.get('model-class');
-	
-    injector.run('extend');    
-    injector.run('on-extend'); 
-    injector.run('on-init');
+export default function Components() {
+    // injector.run('extend');    
+    // injector.run('on-extend'); 
+    // injector.run('on-init');
+    
+    Builder();
     
     ModelClass.$.regComponent = regComponent;
 	ModelClass.$.useComponent = useComponent;
@@ -15,12 +16,12 @@ function Components(injector) {
     ModelClass.$.onExtend(inheritSupport);
     ModelClass.$.onInit(inheritSupport);
 
-	function regComponent(component) {
+	function regComponent(component: any) {
         var components = getComponents.apply(this);
         return components.reg[component.componentName] = component;
     }
 
-    function useComponent(name) {
+    function useComponent(name: string) {
         var Owner = this.ModelClass || this;
         var components = getComponents.apply(this);
         var component = components.reg[name];
@@ -50,58 +51,13 @@ function Components(injector) {
             ownerData = Owner._data();
             
         var parentComponents = parentData.components || {},
-            ownComponents = {};
+            ownComponents = {
+                reg: {}, 
+                use: {}
+            };
         
         ownerData.components = ownComponents;
         ownComponents.reg = Object.create(parentComponents.reg || {});
         ownComponents.use = Object.create(parentComponents.use || {});
     }
 }
-
-/*
-
-API design
-
-regComponent()
-useComponent()
-
-*/
-
-
-/*
-
-Component Descriptor
-
-{
-    name: '',
-    
-    scope: class, instance
-    args: creating args
-    init: function() {
-        
-    },
-    
-    make: deregistartion cb
-    props: {
-        scope: class, instance
-        args: creating args
-        someProp: function() {
-            return '';
-        }
-    },
-    
-    scope: class, instance
-    destroy: [optional] function() {
-        
-    },
-    
-    isSinglon: true false,
-    
-    return: deregistartion cb
-    class: {},
-    instance: {},
-    
-    classIife: {}
-}
-
-*/

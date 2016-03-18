@@ -7,7 +7,8 @@ var paths = require('./../paths.js'),
 	Server = karma.Server;
 
 module.exports = function() {
-	var files = utils.appFilesPaths();
+	//var files = utils.appFilesPaths();
+	var files = ['./release/mO.js'];
 	
 	files.push(paths.tests);
 	
