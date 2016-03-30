@@ -5,6 +5,8 @@ module.exports = {
         filename: "mO.js"
     },
     
+    watch: true,
+    
     // Currently we need to add '.ts' to resolve.extensions array.
     resolve: {
         extensions: ['', '.ts', '.webpack.js', '.web.js', '.js']

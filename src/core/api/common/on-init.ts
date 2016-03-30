@@ -9,6 +9,9 @@ export default function OnInit() {
 
 	function onInit(cb: any) {
         var Owner = this.ModelClass || this.instance;
+        if(this.instance) {
+            cb.apply(Owner, Owner._data().initArgs);
+        }
         return Utils.addToInstStack(Owner, cb);
 	}
 }

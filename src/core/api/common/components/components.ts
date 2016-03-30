@@ -1,5 +1,5 @@
 import ModelClass from './../../../model-class.ts';
-import Builder from './builder.ts';
+import Builder from './builder/builder.ts';
 
 export default function Components() {
     // injector.run('extend');    
@@ -22,7 +22,7 @@ export default function Components() {
     }
 
     function useComponent(name: string) {
-        var Owner = this.ModelClass || this;
+        var Owner = this.ModelClass || this.instance;
         var components = getComponents.apply(this);
         var component = components.reg[name];
         if(!component) {
@@ -37,7 +37,7 @@ export default function Components() {
     }
     
     function getComponents() {
-        var Owner = this.ModelClass || this;
+        var Owner = this.ModelClass || this.instance;
         var data = Owner._data();
         var components = data.components;
         return components;
