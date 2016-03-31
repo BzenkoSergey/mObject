@@ -25,7 +25,7 @@ describe('$ Components: props', function() {
     };
     
     var component = mObject.$.createComponent(descriptor);
-    var Child = mObject.$.extend();
+    var Child;
     
     beforeEach(function() {
         propCbCounter = 0;    

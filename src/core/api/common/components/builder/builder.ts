@@ -2,6 +2,7 @@ import ModelClass from './../../../../model-class.ts';
 
 import init from './components/init.ts';
 import props from './components/props.ts';
+import destroy from './components/destroy.ts';
 
 interface IComponentCompiler {
     (): any;
@@ -18,7 +19,8 @@ interface IComponentDescriptor {
 
 let builderComponents : any[] = [
     init,
-    props
+    props,
+    destroy
 ];
 
 export default function ComponentsCreator() {
