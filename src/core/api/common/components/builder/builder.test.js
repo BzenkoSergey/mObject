@@ -1,4 +1,4 @@
-describe('$ Components : builder', function() {
+describe('$ Components: builder', function() {
 	beforeEach(function() {  
        
     });
